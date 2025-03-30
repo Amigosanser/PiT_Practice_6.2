@@ -21,11 +21,11 @@
 
                 <!-- Поле Логина -->
                 <TextBlock Text="Логин:" Style="{StaticResource HeaderTextStyle}"/>
-                <TextBox x:Name="txtUsername" Style="{StaticResource InputFieldStyle}"/>
+                <TextBox x:Name="txtUsername" Style="{StaticResource InputFieldStyle}" x:FieldModifier="public"/>
 
                 <!-- Поле Пароля -->
                 <TextBlock Text="Пароль:" Style="{StaticResource HeaderTextStyle}" Margin="0,10,0,0"/>
-                <PasswordBox x:Name="txtPassword" Style="{StaticResource PasswordFieldStyle}"/>
+                <PasswordBox x:Name="txtPassword" Style="{StaticResource PasswordFieldStyle}" x:FieldModifier="public"/>
 
                 <!-- Переключатель "Оставаться в системе" -->
                 <CheckBox x:Name="chkRememberMe" 

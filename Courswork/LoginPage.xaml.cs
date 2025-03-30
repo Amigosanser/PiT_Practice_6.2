@@ -60,7 +60,7 @@ namespace Courswork
         }
 
         // Обработчик кнопки "Войти"
-        private void Login_Click(object sender, RoutedEventArgs e)
+        public void Login_Click(object sender, RoutedEventArgs e)
         {
              string username = txtUsername.Text;
             string password = txtPassword.Password;
