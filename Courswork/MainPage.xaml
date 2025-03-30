@@ -1,0 +1,122 @@
+﻿<Page x:Class="Courswork.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Главная страница"
+      Background="#FFFFFF" Loaded="Page_Loaded">
+
+    <Grid>
+        <!-- Верхняя панель с именем пользователя и меню -->
+        <Border Background="Transparent" Padding="10" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0">
+            <StackPanel Orientation="Horizontal">
+                <!-- Имя пользователя (красный овал с белым текстом) -->
+                <Button x:Name="btnUserMenu" 
+                        Click="btnUserMenu_Click" 
+                        Background="Red" 
+                        BorderThickness="0" 
+                        Padding="10,5" 
+                        HorizontalAlignment="Right" 
+                        VerticalAlignment="Top">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="Red" CornerRadius="20" Padding="40,5">
+                                <TextBlock x:Name="txtUsername" 
+                                           Text="Имя пользователя" 
+                                           Foreground="White" 
+                                           FontSize="14" 
+                                           HorizontalAlignment="Right" 
+                                           VerticalAlignment="Top"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <!-- Меню пользователя (скрыто по умолчанию) -->
+        <Border x:Name="pnlUserMenu" 
+                Background="White" 
+                BorderBrush="#888" 
+                BorderThickness="1" 
+                Padding="5" 
+                CornerRadius="5"
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                Margin="0,60,10,0" 
+                Visibility="Collapsed">
+            <StackPanel>
+                <Button Content="Смена пароля" 
+                        Click="ChangePassword_Click" 
+                        Style="{StaticResource UserMenuButtonStyle}"/>
+                <Button Content="Выйти" 
+                        Click="Logout_Click" 
+                        Style="{StaticResource UserMenuButtonStyle}"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Левая панель с вкладками -->
+        <Border Background="#F0F0F0" Width="300" VerticalAlignment="Stretch" HorizontalAlignment="Left">
+            <StackPanel>
+                <!-- Вкладка "Расписание" -->
+                <Button Content="Расписание" 
+                        Style="{StaticResource TabButtonStyle}" 
+                        Click="OpenSchedulePage"/>
+
+                <!-- Вкладка "Посещаемость" -->
+                <Button Content="Посещаемость" 
+                        Style="{StaticResource TabButtonStyle}" 
+                        Click="OpenAttendancePage"/>
+
+                <!-- Вкладка "Оставить отзыв" -->
+                <Button Content="Оставить отзыв" 
+                        Style="{StaticResource TabButtonStyle}" 
+                        Click="OpenFeedbackPage"/>
+
+                <!-- Вкладка "Добавить занятие" -->
+                <Button Content="Добавить занятие"
+                        Name="AddScheduleButton"
+                        Visibility ="Hidden"
+                        Style="{StaticResource TabButtonStyle}" 
+                        Click="AddSchedulePage"/>
+                <!-- Вкладка "Добавить игру" -->
+                <Button Content="Добавить игру"
+                        Name="AddGameButton"
+                        Visibility ="Hidden"
+                        Style="{StaticResource TabButtonStyle}" 
+                        Click="AddGamePage"/>
+
+                <!-- Вкладка "Добавить категорию" -->
+                <Button Content="Добавить категорию"
+                        Name="AddGameCategoriesButton"
+                        Visibility ="Hidden"
+                        Style="{StaticResource TabButtonStyle}" 
+                        Click="AddGameCategoriesPage"/>
+
+                <!-- Вкладка "Отметить присутствующих" -->
+                <Button Content="Отметить присутствующих"
+                        Name="AddAttendanceButton"
+                        Visibility ="Hidden"
+                        Style="{StaticResource TabButtonStyle}" 
+                        Click="AddAttendancePage"/>
+
+                <!-- Вкладка "Редактирование пользователей" -->
+                <Button Content="Редактирование пользователей"
+                        Name="AdmUsersButton"
+                        Visibility ="Hidden"
+                        Style="{StaticResource TabButtonStyle}" 
+                        Click="AdmUsersPage"/>
+
+                <!-- Вкладка "Редактирование расписания" -->
+                <Button Content="Редактирование расписания"
+                        Name="AdmScheduleButton"
+                        Visibility ="Hidden"
+                        Style="{StaticResource TabButtonStyle}" 
+                        Click="AdmSchedulePage"/>
+
+
+            </StackPanel>
+        </Border>
+
+        <!-- Основная область для отображения контента -->
+        <Frame x:Name="MainContentFrame" Margin="210,50,10,10" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Page>

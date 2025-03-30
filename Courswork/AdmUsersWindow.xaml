@@ -1,0 +1,71 @@
+﻿<Window x:Class="Courswork.AdmUsersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Управление пользователями" 
+        Height="553" 
+        Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель инструментов -->
+        <ToolBar Grid.Row="0">
+            <Button x:Name="btnNew" Content="Новый" Click="btnNew_Click"/>
+            <Button x:Name="btnDelete" Content="Удалить" Click="btnDelete_Click"/>
+            <Button x:Name="btnRefresh" Content="Обновить" Click="btnRefresh_Click"/>
+        </ToolBar>
+
+        <!-- Список пользователей -->
+        <DataGrid x:Name="dgUsers" Grid.Row="1" Margin="0,10"
+          AutoGenerateColumns="False" 
+          SelectionMode="Single"
+          SelectionChanged="dgUsers_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding UserID}" Width="30"/>
+                <DataGridTextColumn Header="Логин" Binding="{Binding FullName}" Width="*"/>
+                <DataGridTextColumn Header="Роль" Binding="{Binding RoleName}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Форма редактирования -->
+        <GroupBox Grid.Row="2" Header="Форма пользователя" Margin="0,10,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="txtFormTitle" Grid.Row="0" Text="Добавление нового пользователя" 
+                           FontWeight="Bold" Margin="0,0,0,10"/>
+
+                <Label Grid.Row="1">Логин:</Label>
+                <TextBox x:Name="txtFullName" Grid.Row="2" Margin="0,0,0,10"/>
+
+                <Label Grid.Row="3">Пароль:</Label>
+                <PasswordBox x:Name="pwdPassword" Grid.Row="4" Margin="0,0,0,10"/>
+
+                <Label Grid.Row="5">Роль:</Label>
+                <ComboBox x:Name="cmbRoles" Grid.Row="6" Margin="0,0,0,10"
+                          DisplayMemberPath="RoleName"
+                          SelectedValuePath="RoleID"/>
+
+                <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnSave" Content="Добавить" Width="100" Margin="0,0,10,0" 
+                            Click="btnSave_Click"/>
+                    <Button x:Name="btnCancel" Content="Отмена" Width="100" 
+                            Click="btnCancel_Click" Visibility="Collapsed"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

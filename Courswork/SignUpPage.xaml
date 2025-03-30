@@ -1,0 +1,84 @@
+﻿<Page x:Class="Courswork.SignUpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Регистрация"
+      Background="#FFFFFF">
+
+    <!-- Подключение словаря стилей -->
+    <Page.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </Page.Resources>
+
+    <Grid>
+        <!-- Обводка контура (рамка) -->
+        <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" Padding="20" Width="400" Height="600"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel>
+
+                <!-- Верхний блок с навигацией -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <TextBlock Text="ВХОД" Style="{StaticResource InactiveTabTextStyle}" Cursor="Hand" MouseDown="OpenLoginPage"/>
+                    <TextBlock Text=" | " Style="{StaticResource TabSeparatorStyle}"/>
+                    <TextBlock Text="РЕГИСТРАЦИЯ" Style="{StaticResource ActiveTabTextStyle}"/>
+                </StackPanel>
+
+                <!-- Поля для регистрации -->
+                <TextBlock Text="Логин:" Style="{StaticResource HeaderTextStyle}"/>
+                <TextBox x:Name="txtUsername" Style="{StaticResource InputFieldStyle}"/>
+
+                <TextBlock Text="Пароль:" Style="{StaticResource HeaderTextStyle}" Margin="0,10,0,0"/>
+                <PasswordBox x:Name="txtPassword" Style="{StaticResource PasswordFieldStyle}"/>
+
+                <TextBlock Text="Повторите пароль:" Style="{StaticResource HeaderTextStyle}" Margin="0,10,0,0"/>
+                <PasswordBox x:Name="txtConfirmPassword" Style="{StaticResource PasswordFieldStyle}"/>
+
+                <TextBlock Text="Роль:" Style="{StaticResource HeaderTextStyle}" Margin="0,10,0,0"/>
+                <ComboBox x:Name="cmbRole" Style="{StaticResource ComboBoxStyle}" SelectionChanged="cmbRole_SelectionChanged">
+                    <ComboBoxItem Content="Учащийся"/>
+                    <ComboBoxItem Content="Родитель"/>
+                    <ComboBoxItem Content="Методист"/>
+                </ComboBox>
+
+                <!-- Поле "Кодовое слово" для Методиста -->
+                <StackPanel x:Name="pnlVerificationWord" Visibility="Collapsed" Margin="0,10,0,0">
+                    <TextBlock Text="Кодовое слово:" Style="{StaticResource HeaderTextStyle}"/>
+                    <TextBox x:Name="txtVerificationWord" Style="{StaticResource InputFieldStyle}"/>
+                </StackPanel>
+
+                <!-- Поле "Контактная информация" для Родителя -->
+                <StackPanel x:Name="pnlContactInfo" Visibility="Collapsed" Margin="0,10,0,0">
+                    <TextBlock Text="Контактная информация:" Style="{StaticResource HeaderTextStyle}"/>
+                    <TextBox x:Name="txtContactInfo" Style="{StaticResource InputFieldStyle}"/>
+                </StackPanel>
+
+                <!-- Поля "Возраст" и "Родитель" для Учащегося -->
+                <StackPanel x:Name="pnlStudentInfo" Visibility="Collapsed" Margin="0,10,0,0">
+                    <TextBlock Text="Возраст:" Style="{StaticResource HeaderTextStyle}"/>
+                    <TextBox x:Name="txtAge" Style="{StaticResource InputFieldStyle}" InputScope="Number"/>
+
+                    <TextBlock Text="Родитель:" Style="{StaticResource HeaderTextStyle}" Margin="0,10,0,0"/>
+                    <ComboBox x:Name="cmbParent" Style="{StaticResource ComboBoxStyle}"/>
+                </StackPanel>
+
+                <!-- Кнопка "Зарегистрироваться" -->
+                <Button Content="Зарегистрироваться" 
+                        Click="SignUp_Click" 
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Margin="0,20,0,0"/>
+
+                <!-- Горизонтальная черта -->
+                <Border BorderBrush="#888" BorderThickness="0,1,0,0" Margin="0,40,0,10"/>
+
+                <!-- Ссылка "Уже есть аккаунт? Войти" -->
+                <TextBlock Text="Уже есть аккаунт? Войти" 
+                           Foreground="#888" 
+                           FontSize="14" 
+                           Cursor="Hand"
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Bottom" 
+                           Margin="0,10,0,0"
+                           MouseDown="OpenLoginPage"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

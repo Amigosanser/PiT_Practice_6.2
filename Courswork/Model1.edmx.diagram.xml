@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9dca4e9070fe45d4bd7f9ca1b6129e76" Name="Diagram1">
+        <EntityTypeShape EntityType="MPID4855073Model.Achievements" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.Attendance" Width="1.5" PointX="10.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.Children" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.Feedback" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.GameCategories" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.Games" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.Locations" Width="1.5" PointX="6" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.Methodists" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.Parents" Width="1.5" PointX="3.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.Resources" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.Roles" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.Schedule" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MPID4855073Model.Users" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="MPID4855073Model.FK__Achieveme__Child__607251E5" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Attendanc__Child__681373AD" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Attendanc__Sched__671F4F74" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Children__Parent__51300E55" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Schedule__ChildI__56E8E7AB" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Feedback__GameID__5CA1C101" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Feedback__UserID__5D95E53A" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Games__CategoryI__4B7734FF" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Games__Methodist__4A8310C6" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Resources__GameI__634EBE90" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Schedule__GameID__55F4C372" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Schedule__Locati__57DD0BE4" ManuallyRouted="false" />
+        <AssociationConnector Association="MPID4855073Model.FK__Users__RoleID__40F9A68C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

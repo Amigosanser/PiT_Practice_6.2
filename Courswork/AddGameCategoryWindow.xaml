@@ -1,0 +1,13 @@
+﻿<Window x:Class="Courswork.AddGameCategoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавить категорию" Height="200" Width="400">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Название категории:" Margin="0,0,0,5"/>
+            <TextBox Name="CategoryNameTextBox" Width="300" Margin="0,0,0,10"/>
+
+            <Button Content="Добавить" Click="AddCategory_Click" Width="100" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
